@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter/Forgor%20Password.dart';
 import 'package:figma_to_flutter/signUp.dart';
 import 'package:flutter/material.dart';
 
@@ -69,9 +70,13 @@ class _signInState extends State<signIn> {
                     padding: const EdgeInsets.only(right: 15),
                     child: Align(
                       alignment: Alignment.centerRight,
-                      child: Text(
-                        'Forgot Password',
-                        style: TextStyle(color: Color(0xffF83758)),
+                      child: GestureDetector( onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>forgotPassword()));
+                      },
+                        child: Text(
+                          'Forgot Password',
+                          style: TextStyle(color: Color(0xffF83758)),
+                        ),
                       ),
                     ),
                   ),
