@@ -68,9 +68,18 @@ flutter:
     - assets/slide1.png
     - assets/slide2.png
     - assets/slide3.png
+    - assets/womens.png
+    - assets/fashion.png
+    - assets/kids.png
+    - assets/men.png
+    - assets/beauty.png
     - assets/homescreen/1.png
     - assets/homescreen/2.png
     - assets/homescreen/3.png
+    - assets/Rectangle 48.png
+    - assets/dots.png
+    - assets/kurta.png
+    - assets/Shoe.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
