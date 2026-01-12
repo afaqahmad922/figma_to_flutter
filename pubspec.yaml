@@ -80,6 +80,12 @@ flutter:
     - assets/dots.png
     - assets/kurta.png
     - assets/Shoe.png
+    - assets/offer.png
+    - assets/mac.png
+    - assets/watch.png
+    - assets/shoes.png
+    - assets/summer.png
+    - assets/off.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
