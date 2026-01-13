@@ -13,7 +13,7 @@ class onboardingScreen extends StatefulWidget {
 }
 
 class _onboardingScreenState extends State<onboardingScreen> {
-  PageController _controller = PageController();
+  final PageController _controller = PageController();
   bool onlastPage = false;
 
   @override

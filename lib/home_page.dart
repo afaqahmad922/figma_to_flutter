@@ -26,39 +26,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               SizedBox(height: 30),
-              Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(0, 2),
-                      blurRadius: 9,
-                      spreadRadius: 0,
-                      color: Colors.black.withOpacity(0.04), // #0000000A
-                    ),
-                  ],
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search any Product..',
-                    hintStyle: TextStyle(
-                      color: Color(0xffBBBBBB),
-                      fontFamily: 'Montserrat',
-                    ),
-                    prefixIcon: Icon(Icons.search),
-                    suffixIcon: Icon(Icons.keyboard_voice_outlined),
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 14,
-                      horizontal: 16,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none,
-                    ),
-                  ),
-                ),
-              ),
+              SearchBarWidget( hintText: "Search any Products"),
               SizedBox(height: 10),
               Row(
                 children: [
@@ -71,57 +39,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Spacer(),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          offset: Offset(1, 1),
-                          blurRadius: 16,
-                          color: Colors.black.withOpacity(0.08),
-                        ),
-                      ],
-                    ),
-                    height: 40,
-                    width: 70,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Sort',
-                          style: TextStyle(fontFamily: 'Montserrat'),
-                        ),
-                        Icon(Icons.swap_vert),
-                      ],
-                    ),
-                  ),
+                  SortFilterButton(text: 'Sort', icon: Icons.swap_vert),
                   SizedBox(width: 10),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          offset: Offset(1, 1),
-                          blurRadius: 16,
-                          color: Colors.black.withOpacity(0.08),
-                        ),
-                      ],
-                    ),
-                    height: 40,
-                    width: 70,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Filter',
-                          style: TextStyle(fontFamily: 'Montserrat'),
-                        ),
-                        Icon(Icons.filter_alt_outlined),
-                      ],
-                    ),
-                  ),
+                  SortFilterButton(text: "Filter", icon: Icons.filter_list),
                 ],
               ),
               SizedBox(height: 20),
@@ -131,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(1, 1),
+                      offset: const Offset(1, 1),
                       blurRadius: 16,
                       color: Colors.black.withOpacity(0.08),
                     ),
@@ -144,71 +64,22 @@ class _HomePageState extends State<HomePage> {
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          children: [
-                            Image.asset('assets/men.png'),
-                            SizedBox(height: 6),
-                            Text('Men'),
-                          ],
-                        ),
+                      children: const [
+                        CategoryItem(imagePath: 'assets/men.png', label: 'Men'),
                         SizedBox(width: 18),
-                        Column(
-                          children: [
-                            Image.asset('assets/fashion.png'),
-                            SizedBox(height: 6),
-                            Text('Fashion'),
-                          ],
-                        ),
+                        CategoryItem(imagePath: 'assets/fashion.png', label: 'Fashion'),
                         SizedBox(width: 18),
-                        Column(
-                          children: [
-                            Image.asset('assets/kids.png'),
-                            SizedBox(height: 6),
-                            Text('Kids'),
-                          ],
-                        ),
+                        CategoryItem(imagePath: 'assets/kids.png', label: 'Kids'),
                         SizedBox(width: 18),
-                        Column(
-                          children: [
-                            Image.asset('assets/womens.png'),
-                            SizedBox(height: 6),
-                            Text('Womens'),
-                          ],
-                        ),
+                        CategoryItem(imagePath: 'assets/womens.png', label: 'Womens'),
                         SizedBox(width: 18),
-                        Column(
-                          children: [
-                            Image.asset('assets/beauty.png'),
-                            SizedBox(height: 6),
-                            Text('Beauty'),
-                          ],
-                        ),
+                        CategoryItem(imagePath: 'assets/beauty.png', label: 'Beauty'),
                         SizedBox(width: 18),
-                        Column(
-                          children: [
-                            Image.asset('assets/men.png'),
-                            SizedBox(height: 6),
-                            Text('Men'),
-                          ],
-                        ),
+                        CategoryItem(imagePath: 'assets/men.png', label: 'Men'),
                         SizedBox(width: 18),
-                        Column(
-                          children: [
-                            Image.asset('assets/fashion.png'),
-                            SizedBox(height: 6),
-                            Text('Fashion'),
-                          ],
-                        ),
+                        CategoryItem(imagePath: 'assets/fashion.png', label: 'Fashion'),
                         SizedBox(width: 18),
-                        Column(
-                          children: [
-                            Image.asset('assets/kids.png'),
-                            SizedBox(height: 6),
-                            Text('Kids'),
-                          ],
-                        ),
+                        CategoryItem(imagePath: 'assets/kids.png', label: 'Kids'),
                       ],
                     ),
                   ),
@@ -1165,8 +1036,9 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.shopping_cart), backgroundColor: Colors.white,
-          onPressed: () {}),
+        backgroundColor: Colors.white,
+          onPressed: () {},
+        child: Icon(Icons.shopping_cart)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         child: Container(
@@ -1209,3 +1081,119 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+/// Search Bar
+class SearchBarWidget extends StatelessWidget {
+  final String hintText;
+
+  const SearchBarWidget ({
+    super.key, required this.hintText,
+});
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 2),
+            blurRadius: 9,
+            spreadRadius: 0,
+            color: Colors.black.withOpacity(0.04), // #0000000A
+          ),
+        ],
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+          hintText: hintText,
+          hintStyle: TextStyle(
+            color: Color(0xffBBBBBB),
+            fontFamily: 'Montserrat',
+          ),
+          prefixIcon: Icon(Icons.search),
+          suffixIcon: Icon(Icons.keyboard_voice_outlined),
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding: EdgeInsets.symmetric(
+            vertical: 14,
+            horizontal: 16,
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide.none,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Sort and Filter Small Containers
+class SortFilterButton extends StatelessWidget {
+  final String text;
+  final IconData icon;
+
+  const SortFilterButton ({
+    super.key,
+    required this.text,
+    required this.icon,
+});
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(1, 1),
+            blurRadius: 16,
+            color: Colors.black.withOpacity(0.08),
+          ),
+        ],
+      ),
+      height: 40,
+      width: 70,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text( text,
+            style: TextStyle(fontFamily: 'Montserrat')),
+          Icon(icon),
+        ],
+      ),
+    );
+  }
+}
+
+/// Single category item (image + label)
+class CategoryItem extends StatelessWidget {
+  final String imagePath;
+  final String label;
+
+  const CategoryItem({
+    super.key,
+    required this.imagePath,
+    required this.label,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Image.asset(
+          imagePath,
+          height: 60,
+          width: 60,
+          fit: BoxFit.cover,
+        ),
+        const SizedBox(height: 6),
+        Text(
+          label,
+          style: const TextStyle(fontFamily: 'Montserrat', fontSize: 14),
+        ),
+      ],
+    );
+  }
+}
+

@@ -1,4 +1,3 @@
-import 'package:figma_to_flutter/signUp.dart';
 import 'package:flutter/material.dart';
 
 class forgotPassword extends StatefulWidget {
