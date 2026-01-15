@@ -31,40 +31,9 @@ class _signInState extends State<signIn> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Username or Email',
-                      prefixIcon: Icon(Icons.person),
-                      filled: true,
-                      fillColor: Colors.grey[200],
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: 14,
-                        horizontal: 16,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
-                  ),
+                  AppInputField(hintText: 'Username or Email', prefixIcon: Icons.person,),
                   SizedBox(height: 30),
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Password',
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: Icon(Icons.remove_red_eye),
-                      filled: true,
-                      fillColor: Colors.grey[200],
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: 14,
-                        horizontal: 16,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
-                  ),
+                  AppInputField(hintText: 'Password', prefixIcon: Icons.lock, suffixIcon: Icons.remove_red_eye_outlined,),
                   SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(right: 15),
@@ -81,23 +50,7 @@ class _signInState extends State<signIn> {
                     ),
                   ),
                   SizedBox(height: 40),
-                  Container(
-                    height: 55,
-                    width: 417,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Color(0xffF83758),
-                    ),
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                      ),
-                    ),
-                  ),
+                  Button(text: 'Login'),
                   SizedBox(height: 80),
                   Align(
                     alignment: Alignment.center,
@@ -110,59 +63,11 @@ class _signInState extends State<signIn> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 55,
-                        width: 55,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.grey[200],
-                          border: Border.all(color: Color(0xffF83758)),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Image.asset(
-                            'assets/google.png',
-                            width: 14,
-                            height: 14,
-                          ),
-                        ),
-                      ),
+                      Socials(imagePath: 'assets/google.png'),
                       SizedBox(width: 20,),
-                      Container(
-                        height: 55,
-                        width: 55,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.grey[200],
-                          border: Border.all(color: Color(0xffF83758)),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Image.asset(
-                            'assets/facebook.png',
-                            width: 14,
-                            height: 14,
-                          ),
-                        ),
-                      ),
+                      Socials(imagePath: 'assets/facebook.png'),
                       SizedBox(width: 20,),
-                      Container(
-                        height: 55,
-                        width: 55,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.grey[200],
-                          border: Border.all(color: Color(0xffF83758)),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Image.asset(
-                            'assets/apple.png',
-                            width: 14,
-                            height: 14,
-                          ),
-                        ),
-                      ),
+                      Socials(imagePath: 'assets/apple.png'),
                     ],
                   ),
                   SizedBox(height: 20),
@@ -200,3 +105,97 @@ class _signInState extends State<signIn> {
     );
   }
 }
+
+class AppInputField extends StatelessWidget {
+  final String hintText;
+  final IconData prefixIcon;
+  final IconData? suffixIcon; // nullable
+
+  const AppInputField({
+    super.key,
+    required this.hintText,
+    required this.prefixIcon,
+    this.suffixIcon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        hintText: hintText,
+        prefixIcon: Icon(prefixIcon),
+        suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+        filled: true,
+        fillColor: Colors.grey[200],
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 14,
+          horizontal: 16,
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide.none,
+        ),
+      ),
+    );
+  }
+}
+
+class Button extends StatelessWidget {
+  final String text;
+
+  const Button ({
+    super.key,
+    required this.text,
+});
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      height: 55,
+      width: double.infinity,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: Color(0xffF83758),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          fontSize: 23,
+        ),
+      ),
+    );
+  }
+}
+
+class Socials extends StatelessWidget {
+  final String imagePath;
+  const Socials ({
+    super.key,
+    required this.imagePath,
+});
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      height: 55,
+      width: 55,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.grey[200],
+        border: Border.all(color: Color(0xffF83758)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Image.asset(
+          imagePath,
+          width: 14,
+          height: 14,
+        ),
+      ),
+    );
+  }
+}
+

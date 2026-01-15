@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter/signIn.dart';
 import 'package:flutter/material.dart';
 
 class signUp extends StatefulWidget {
@@ -29,81 +30,18 @@ class _signInState extends State<signUp> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Username or Email',
-                      prefixIcon: Icon(Icons.person),
-                      filled: true,
-                      fillColor: Colors.grey[200],
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: 14,
-                        horizontal: 16,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
-                  ),
+                  AppInputField(hintText: 'Username or Email', prefixIcon: Icons.person),
                   SizedBox(height: 30),
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Password',
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: Icon(Icons.remove_red_eye),
-                      filled: true,
-                      fillColor: Colors.grey[200],
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: 14,
-                        horizontal: 16,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
-                  ),
+                  AppInputField(hintText: 'Password', prefixIcon: Icons.lock, suffixIcon: Icons.remove_red_eye_outlined,),
                   SizedBox(height: 30),
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'ConfirmPassword',
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: Icon(Icons.remove_red_eye),
-                      filled: true,
-                      fillColor: Colors.grey[200],
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: 14,
-                        horizontal: 16,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
-                  ),
+                  AppInputField(hintText: 'Confirm Password', prefixIcon: Icons.lock, suffixIcon: Icons.remove_red_eye_outlined,),
                   SizedBox(height: 10),
                   Text(
                     'By clicking the Register button, you agree to the public offer',
                     style: TextStyle(color: Color(0xffF83758)),
                   ),
                   SizedBox(height: 40),
-                  Container(
-                    height: 55,
-                    width: 417,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Color(0xffF83758),
-                    ),
-                    child: Text(
-                      'Create Account',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                      ),
-                    ),
-                  ),
+                  Button(text: 'Create Account'),
                   SizedBox(height: 50),
                   Align(
                     alignment: Alignment.center,
@@ -116,59 +54,11 @@ class _signInState extends State<signUp> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 55,
-                        width: 55,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.grey[200],
-                          border: Border.all(color: Color(0xffF83758)),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Image.asset(
-                            'assets/google.png',
-                            width: 14,
-                            height: 14,
-                          ),
-                        ),
-                      ),
+                      Socials(imagePath: 'assets/google.png'),
                       SizedBox(width: 20,),
-                      Container(
-                        height: 55,
-                        width: 55,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.grey[200],
-                          border: Border.all(color: Color(0xffF83758)),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Image.asset(
-                            'assets/facebook.png',
-                            width: 14,
-                            height: 14,
-                          ),
-                        ),
-                      ),
+                      Socials(imagePath: 'assets/facebook.png'),
                       SizedBox(width: 20,),
-                      Container(
-                        height: 55,
-                        width: 55,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.grey[200],
-                          border: Border.all(color: Color(0xffF83758)),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Image.asset(
-                            'assets/apple.png',
-                            width: 14,
-                            height: 14,
-                          ),
-                        ),
-                      ),
+                      Socials(imagePath: 'assets/apple.png'),
                     ],
                   ),
                   SizedBox(height: 20),

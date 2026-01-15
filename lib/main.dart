@@ -1,4 +1,6 @@
 import 'package:figma_to_flutter/home_page.dart';
+import 'package:figma_to_flutter/signIn.dart';
+import 'package:figma_to_flutter/signUp.dart';
 import 'package:flutter/material.dart';
 
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const HomePage(),
+      home: const signIn(),
     );
   }
 }
