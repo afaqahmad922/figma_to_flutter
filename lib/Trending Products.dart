@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import '../widgets/product_card.dart';
 
 import 'home_page.dart';
 
 class trending_Products extends StatefulWidget {
+
   const trending_Products({super.key});
 
   @override
@@ -10,6 +12,7 @@ class trending_Products extends StatefulWidget {
 }
 
 class _trending_ProductsState extends State<trending_Products> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -135,129 +138,122 @@ class _trending_ProductsState extends State<trending_Products> {
           child: Icon(Icons.shopping_cart)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        child: Container(
-          color: Colors.white,
-          height: 60, width: double.infinity,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 5, right: 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column( mainAxisAlignment: MainAxisAlignment.center,
+        child: SizedBox(
+          height: 70,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              // Home
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const HomePage()),
+                  );
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.home),
-                    Text('Home', style: TextStyle(fontFamily: 'Montserrat'),),
+                    Icon(
+                      Icons.home,
+                      size: 28,
+                    ),
+                    SizedBox(height: 4),
+                    Text(
+                      'Home',
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 12,
+                      ),
+                    ),
                   ],
                 ),
-                Column( mainAxisAlignment: MainAxisAlignment.center,
+              ),
+
+              // Wishlist
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const trending_Products()),
+                  );
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.favorite_outline, color: Colors.red,),
-                    Text('Wishlist', style: TextStyle(fontFamily: 'Montserrat', color: Colors.red),),
+                    Icon(
+                      Icons.favorite_outline,
+                      size: 28,
+                    ),
+                    SizedBox(height: 4),
+                    Text(
+                      'Wishlist',
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 12,
+                      ),
+                    ),
                   ],
                 ),
-                Column( mainAxisAlignment: MainAxisAlignment.center,
+              ),
+
+              // Search
+              GestureDetector(
+                onTap: () {
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.search),
-                    Text('Search', style: TextStyle(fontFamily: 'Montserrat'),),
+                    Icon(
+                      Icons.search,
+                      size: 28,
+                    ),
+                    SizedBox(height: 4),
+                    Text(
+                      'Search',
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 12,
+                      ),
+                    ),
                   ],
                 ),
-                Column( mainAxisAlignment: MainAxisAlignment.center,
+              ),
+
+              // Settings
+              GestureDetector(
+                onTap: () {
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.settings),
-                    Text('Settings', style: TextStyle(fontFamily: 'Montserrat'),),
+                    Icon(
+                      Icons.settings,
+                      size: 28,
+                    ),
+                    SizedBox(height: 4),
+                    Text(
+                      'Settings',
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 12,
+                      ),
+                    ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
+
+
+
     );
   }
 }
 
-class ProductCard extends StatelessWidget {
-  final String title;
-  final String description;
-  final String imageUrl;
-  final String price;
-
-  const ProductCard({
-    super.key,
-    required this.title,
-    required this.description,
-    required this.imageUrl,
-    required this.price,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
-      width: 180,
-      margin: EdgeInsets.only(right: 12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(1, 1),
-            blurRadius: 16,
-            color: Colors.black.withOpacity(0.08),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-            ),
-            child: Image.asset(
-              imageUrl,
-              height: 150,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  description,
-                  style: TextStyle(fontSize: 12, color: Colors.grey),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  price,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-                ),
-                const SizedBox(width: 6),
-                Row(
-                  children: const [
-                    Icon(Icons.star, color: Colors.amber, size: 14),
-                    Icon(Icons.star, color: Colors.amber, size: 14),
-                    Icon(Icons.star, color: Colors.amber, size: 14),
-                    Icon(Icons.star, color: Colors.amber, size: 14),
-                    Icon(Icons.star_half, color: Colors.amber, size: 14),
-                    SizedBox(width: 4),
-                    Text('344,567', style: TextStyle(fontSize: 12)),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
