@@ -144,30 +144,25 @@ class AppInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 317.w,
-      height: 55.h,
       child: TextField(
-        style: TextStyle(fontSize: 14.sp),
+        style: TextStyle(
+          fontSize: 14.sp.clamp(14, 18),
+        ),
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: TextStyle(fontSize: 14.sp),
-          prefixIcon: Icon(prefixIcon, size: 20.sp),
-          suffixIcon:
-          suffixIcon != null ? Icon(suffixIcon, size: 20.sp) : null,
-
+          hintStyle: TextStyle(fontSize: 14.sp.clamp(14, 18)),
+          prefixIcon: Icon(prefixIcon, size: 20.sp.clamp(16, 24)),
+          suffixIcon: suffixIcon != null
+              ? Icon(suffixIcon, size: 20.sp.clamp(16, 24))
+              : null,
+          contentPadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: BorderSide(
-              width: 1.w,
-              color: Colors.grey,
-            ),
+            borderSide: BorderSide(width: 1.w, color: Colors.grey),
           ),
-
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: BorderSide(
-              width: 1.w,
-              color: Colors.black,
-            ),
+            borderSide: BorderSide(width: 1.w, color: Colors.black),
           ),
         ),
       ),
