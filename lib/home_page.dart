@@ -1,5 +1,7 @@
 import 'package:figma_to_flutter/Trending%20Products.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../widgets/product_card.dart';
 
 
@@ -16,12 +18,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffFDFDFD),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 50, left: 15, right: 15),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(
+                left: 16.w,
+                right: 16.w,
+                top: 52.h,
+              ),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image.asset('assets/homescreen/1.png'),
@@ -29,10 +35,23 @@ class _HomePageState extends State<HomePage> {
                   Image.asset('assets/homescreen/3.png'),
                 ],
               ),
-              SizedBox(height: 30),
-              SearchBarWidget( hintText: "Search any Products"),
-              SizedBox(height: 10),
-              Row(
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 16.w,
+                right: 16.w,
+                top: 16.h,
+              ),
+              child: SearchBarWidget( hintText: "Search any Products"),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 22.w,
+                right: 21.w,
+                top: 16.h,
+              ),
+              child: Row(
                 children: [
                   Text(
                     'All Products',
@@ -48,8 +67,15 @@ class _HomePageState extends State<HomePage> {
                   SortFilterButton(text: "Filter", icon: Icons.filter_list),
                 ],
               ),
-              SizedBox(height: 20),
-              Container(
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 16.w,
+                right: 16.w,
+                top: 16.h,
+              ),
+              child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
@@ -68,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Row(
-                      children: const [
+                      children: [
                         CategoryItem(imagePath: 'assets/men.png', label: 'Men'),
                         SizedBox(width: 18),
                         CategoryItem(imagePath: 'assets/fashion.png', label: 'Fashion'),
@@ -83,22 +109,34 @@ class _HomePageState extends State<HomePage> {
                         SizedBox(width: 18),
                         CategoryItem(imagePath: 'assets/fashion.png', label: 'Fashion'),
                         SizedBox(width: 18),
-                        CategoryItem(imagePath: 'assets/kids.png', label: 'Kids'),
+                        Padding(
+                          padding: EdgeInsets.only(right: 80.w),
+                          child: CategoryItem(imagePath: 'assets/kids.png', label: 'Kids'),
+                        ),
                       ],
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 10),
-              ClipRRect(
+            ),
+            Padding(
+                padding: EdgeInsets.only(
+                  left: 16.w,
+                  right: 16.w,
+                  top: 16.h,
+                ),
+              child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Stack(
                   children: [
-                    Image.asset(
-                      'assets/Rectangle 48.png',
-                      height: 230,
-                      fit: BoxFit.cover,
-                      width: double.infinity,
+                    AspectRatio(
+                      aspectRatio: 343/ 189,
+                      child: Image.asset(
+                        'assets/Rectangle 48.png',
+                        height: 230,
+                        fit: BoxFit.cover,
+                        width: double.infinity,
+                      ),
                     ),
                     Positioned(
                       left: 20,
@@ -167,14 +205,23 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              SizedBox(height: 2),
-              Container(
+            ),
+            Padding(
+              padding: EdgeInsets.only(left:158.w , right:158.w , top:12.h ),
+              child: Container(
                 height: 30,
                 width: double.infinity,
                 color: Colors.white,
                 child: Image.asset('assets/dots.png', height: 10, width: 10),
               ),
-              Container(
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 16.w,
+                right: 16.w,
+                top: 16.h,
+              ),
+              child: Container(
                 decoration: BoxDecoration(
                   color: Color(0xff4392F9),
                   borderRadius: BorderRadius.circular(10),
@@ -242,8 +289,14 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
-              SizedBox(
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 16.w,
+                right: 19.w,
+                top: 16.h,
+              ),
+              child: SizedBox(
                 height: 300,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -397,7 +450,7 @@ class _HomePageState extends State<HomePage> {
                               fit: BoxFit.cover,
                             ),
                           ),
-
+                    
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
@@ -491,8 +544,14 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
-              Container(
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 16.w,
+                right: 16.w,
+                top: 16.h,
+              ),
+              child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
@@ -545,14 +604,28 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
-              SizedBox(
-                height: 170,
-                width: double.infinity,
-                child: Image.asset('assets/mac.png', fit: BoxFit.cover),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 16.w,
+                right: 16.w,
+                top: 16.h,
               ),
-              SizedBox(height: 20),
-              Container(
+              child: AspectRatio(
+                aspectRatio: 343 / 172, // 👈 from Figma
+                child: Image.asset(
+                  'assets/mac.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 16.w,
+                right: 16.w,
+                top: 16.h,
+              ),
+              child: Container(
                 decoration: BoxDecoration(
                   color: Color(0xffFD6E87),
                   borderRadius: BorderRadius.circular(10),
@@ -620,8 +693,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
-              SizedBox(
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 16.w,
+                top: 16.h,
+              ),
+              child: SizedBox(
                 height: 240,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -667,7 +745,7 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 14,
                                   ),
                                 ),
-
+                    
                                 const SizedBox(height: 6),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -749,7 +827,7 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 14,
                                   ),
                                 ),
-
+                    
                                 const SizedBox(height: 6),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -831,7 +909,7 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 14,
                                   ),
                                 ),
-
+                    
                                 const SizedBox(height: 6),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -876,12 +954,17 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
-              Container(
-                height: 300,
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 16.w,
+                right: 16.w,
+                top: 16.h,
+              ),
+              child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12.r),
                   boxShadow: [
                     BoxShadow(
                       offset: Offset(1, 1),
@@ -893,10 +976,13 @@ class _HomePageState extends State<HomePage> {
                 clipBehavior: Clip.hardEdge,
                 child: Column(
                   children: [
-                    Image.asset(
-                      'assets/summer.png',
-                      width: double.infinity,
-                      fit: BoxFit.cover,
+                    AspectRatio(
+                      aspectRatio: 343/204,
+                      child: Image.asset(
+                        'assets/summer.png',
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -968,9 +1054,15 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
-              Container(
-                height: 420,
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 16.w,
+                bottom: 16.h,
+                right: 16.w,
+                top: 16.h,
+              ),
+              child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
@@ -986,20 +1078,29 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Sponsored',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: 'Montserrat',
-                        fontSize: 21,
-                        fontWeight: FontWeight.bold,
+                    Padding(
+                      padding: EdgeInsets.only(left: 16.w, top: 8.h),
+                      child: Text(
+                        'Sponsored',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: 'Montserrat',
+                          fontSize: 21,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     SizedBox(height: 10),
-                    Image.asset(
-                      'assets/off.png',
-                      fit: BoxFit.cover,
-                      width: double.infinity,
+                    AspectRatio(
+                      aspectRatio: 351/292,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 16.w, top: 8.h),
+                        child: Image.asset(
+                          'assets/off.png',
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                        ),
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -1007,7 +1108,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       width: double.infinity,
                       child: Padding(
-                        padding: const EdgeInsets.all(10),
+                        padding: EdgeInsets.only(left: 16.w, top: 8.h),
                         child: Row(
                           children: [
                             Column(
@@ -1034,11 +1135,13 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              SizedBox(height: 30),
-            ],
-          ),
+            ),
+            SizedBox(height: 30),
+          ],
         ),
       ),
+
+
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
           onPressed: () {},
