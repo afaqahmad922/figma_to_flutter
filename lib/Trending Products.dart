@@ -1,10 +1,12 @@
+import 'package:figma_to_flutter/searchScreen.dart';
+import 'package:figma_to_flutter/settingScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widgets/product_card.dart';
 
 import 'home_page.dart';
 
 class trending_Products extends StatefulWidget {
-
   const trending_Products({super.key});
 
   @override
@@ -13,15 +15,20 @@ class trending_Products extends StatefulWidget {
 
 class _trending_ProductsState extends State<trending_Products> {
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffFDFDFD),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 50, left: 15, right: 15),
-        child: Column(
-          children: [
-            Row(
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(
+              left: 16.w,
+              right: 16.w,
+              top: 52.h,
+            ),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset('assets/homescreen/1.png'),
@@ -29,31 +36,44 @@ class _trending_ProductsState extends State<trending_Products> {
                 Image.asset('assets/homescreen/3.png'),
               ],
             ),
-
-            const SizedBox(height: 30),
-            SearchBarWidget(hintText: "Search any Products"),
-            const SizedBox(height: 10),
-
-            Row(
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 16.w,
+              right: 16.w,
+              top: 16.h,
+            ),
+            child: SearchBarWidget( hintText: "Search any Products"),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 22.w,
+              right: 21.w,
+              top: 16.h,
+            ),
+            child: Row(
               children: [
-                const Text(
-                  '52,082+ Items',
+                Text(
+                  'All Products',
                   style: TextStyle(
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
                 ),
-                const Spacer(),
+                Spacer(),
                 SortFilterButton(text: 'Sort', icon: Icons.swap_vert),
-                const SizedBox(width: 10),
+                SizedBox(width: 10),
                 SortFilterButton(text: "Filter", icon: Icons.filter_list),
               ],
             ),
+          ),
 
-            const SizedBox(height: 10),
+          const SizedBox(height: 10),
 
-            Expanded(
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.only(left: 15.w),
               child: GridView.count(
                 crossAxisCount: 2,
                 crossAxisSpacing: 12,
@@ -129,131 +149,9 @@ class _trending_ProductsState extends State<trending_Products> {
                 ],
               ),
             ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.white,
-          onPressed: () {},
-          child: Icon(Icons.shopping_cart)),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        child: SizedBox(
-          height: 70,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              // Home
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const HomePage()),
-                  );
-                },
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.home,
-                      size: 28,
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Home',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              // Wishlist
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const trending_Products()),
-                  );
-                },
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.favorite_outline,
-                      size: 28,
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Wishlist',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              // Search
-              GestureDetector(
-                onTap: () {
-                },
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.search,
-                      size: 28,
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Search',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              // Settings
-              GestureDetector(
-                onTap: () {
-                },
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.settings,
-                      size: 28,
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Settings',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
           ),
-        ),
+        ],
       ),
-
-
-
     );
   }
 }
-

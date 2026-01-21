@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter/BottomBarScreen.dart';
 import 'package:figma_to_flutter/Trending%20Products.dart';
 import 'package:figma_to_flutter/home_page.dart';
 import 'package:figma_to_flutter/signIn.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: const HomePage(),
+        home: const Bottombarscreen(),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductCard extends StatelessWidget {
   final String title;
@@ -19,7 +20,7 @@ class ProductCard extends StatelessWidget {
     // TODO: implement build
     return Container(
       width: 180,
-      margin: EdgeInsets.only(right: 12),
+      margin: EdgeInsets.only(right: 15.w),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),

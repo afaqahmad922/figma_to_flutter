@@ -44,7 +44,6 @@ class _HomePageState extends State<HomePage> {
               ),
               child: SearchBarWidget( hintText: "Search any Products"),
             ),
-            SizedBox(height: 10),
             Padding(
               padding: EdgeInsets.only(
                 left: 22.w,
@@ -68,7 +67,6 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
             Padding(
               padding: EdgeInsets.only(
                 left: 16.w,
@@ -1141,128 +1139,6 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
 
-
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.white,
-          onPressed: () {},
-        child: Icon(Icons.shopping_cart)),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        child: SizedBox(
-          height: 70,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              // Home
-              GestureDetector(
-                onTap: () {
-
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const HomePage()),
-                  );
-                },
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.home,
-                      size: 28,
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Home',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              // Wishlist
-              GestureDetector(
-                onTap: () {
-
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const trending_Products()),
-                  );
-                },
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.favorite_outline,
-                      size: 28, color: Colors.black,
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Wishlist',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              // Search
-              GestureDetector(
-                onTap: () {
-
-                },
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.search,
-                      size: 28,
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Search',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              // Settings
-              GestureDetector(
-                onTap: () {
-                },
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.settings,
-                      size: 28,
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Settings',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }
