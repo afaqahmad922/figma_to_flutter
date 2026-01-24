@@ -406,7 +406,7 @@ class _shop_PageState extends State<shop_Page> {
                 ),
               ),
             ),
-            SizedBox(height: 70.h,)
+            SizedBox(height: 70.h,),
           ],
         ),
       ),
