@@ -1219,7 +1219,7 @@ class SortFilterButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text( text,
-            style: TextStyle(fontFamily: 'Montserrat')),
+            style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold)),
           Icon(icon),
         ],
       ),

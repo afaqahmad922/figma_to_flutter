@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter/Shop%20page.dart';
 import 'package:figma_to_flutter/searchScreen.dart';
 import 'package:figma_to_flutter/settingScreen.dart';
 import 'package:flutter/material.dart';
@@ -20,60 +21,87 @@ class _BottombarscreenState extends State<Bottombarscreen> {
     trending_Products(),
     settingScreen(),
     searchScreen(),
+    shop_Page(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screenList [currentIndexValue],
+      body: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          screenList[currentIndexValue],
 
-      floatingActionButton: Padding(
-        padding: EdgeInsets.only(top: 35.h),
-        child: FloatingActionButton(
-          backgroundColor: Colors.white,
-          elevation: 8,
-          shape: const CircleBorder(), //
-          onPressed: () {},
-          child: const Icon(
-            Icons.shopping_cart,
-            size: 25, //
-            color: Colors.black,
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
-
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 8,
-              offset: Offset(0, -2),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 8,
+                    offset: Offset(0, -2),
+                  ),
+                ],
+              ),
+              child: BottomNavigationBar(
+                type: BottomNavigationBarType.fixed,
+                backgroundColor: Color(0xffFFFFFF),
+                selectedItemColor: Color(0xffEB3030),
+                unselectedItemColor: Colors.black,
+                showUnselectedLabels: true,
+                onTap: (index) {
+                  setState(() {
+                    if (index == 2) return;
+                    currentIndexValue = index > 2 ? index - 1 : index;
+                  });
+                },
+                currentIndex: currentIndexValue,
+                items: [
+                  BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+                  BottomNavigationBarItem(icon: Icon(Icons.favorite_outline), label: "Wishlist"),
+                  BottomNavigationBarItem(icon: SizedBox.shrink(), label: ""),
+                  BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+                  BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
+                ],
+              ),
             ),
-          ],
-        ),
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Color(0xffFFFFFF),
-          selectedItemColor: Color(0xffEB3030),
-          unselectedItemColor: Colors.black,
-          showUnselectedLabels: true,
-          onTap: (index){
-            setState(() {
-              if (index == 2) return;
-              currentIndexValue = index > 2 ? index - 1 : index;
-            });
-          },
-          currentIndex: currentIndexValue,
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home",),
-            BottomNavigationBarItem(icon: Icon(Icons.favorite_outline), label: "Wishlist"),
-            BottomNavigationBarItem(icon: SizedBox.shrink(), label: ""),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-            BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
-          ],
-        ),
+          ),
+
+          Positioned(
+            bottom: 10.h,
+            left: MediaQuery.of(context).size.width / 2 - 28.w,
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  currentIndexValue = 4;
+                });
+              },
+              child: Container(
+                width: 56.w,
+                height: 56.w,
+                decoration: BoxDecoration(
+                  color: Color(0xffEB3030),
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.25),
+                      blurRadius: 8,
+                      offset: Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Icon(
+                  Icons.shopping_cart_outlined,
+                  color: Colors.white,
+                  size: 26.sp,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
