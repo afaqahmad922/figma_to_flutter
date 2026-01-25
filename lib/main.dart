@@ -1,4 +1,5 @@
 import 'package:figma_to_flutter/BottomBarScreen.dart';
+import 'package:figma_to_flutter/Profile.dart';
 import 'package:figma_to_flutter/Shop%20page.dart';
 import 'package:figma_to_flutter/Trending%20Products.dart';
 import 'package:figma_to_flutter/home_page.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: Bottombarscreen(),
+        home: profile(),
       ),
     );
   }
