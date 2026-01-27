@@ -1,10 +1,8 @@
 import 'package:figma_to_flutter/searchScreen.dart';
-import 'package:figma_to_flutter/settingScreen.dart';
+import 'package:figma_to_flutter/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../widgets/product_card.dart';
 
-import 'home_page.dart';
 
 class trending_Products extends StatefulWidget {
   const trending_Products({super.key});

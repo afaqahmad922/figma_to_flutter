@@ -1,5 +1,6 @@
 import 'package:figma_to_flutter/Forgor%20Password.dart';
 import 'package:figma_to_flutter/signUp.dart';
+import 'package:figma_to_flutter/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -128,105 +129,5 @@ class _signInState extends State<signIn> {
   }
 }
 
-class AppInputField extends StatelessWidget {
-  final String hintText;
-  final IconData prefixIcon;
-  final IconData? suffixIcon;
 
-  const AppInputField({
-    super.key,
-    required this.hintText,
-    required this.prefixIcon,
-    this.suffixIcon,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 317.w,
-      child: TextField(
-        style: TextStyle(
-          fontSize: 14.sp.clamp(14, 18),
-        ),
-        decoration: InputDecoration(
-          hintText: hintText,
-          hintStyle: TextStyle(fontSize: 14.sp.clamp(14, 18)),
-          prefixIcon: Icon(prefixIcon, size: 20.sp.clamp(16, 24)),
-          suffixIcon: suffixIcon != null
-              ? Icon(suffixIcon, size: 20.sp.clamp(16, 24))
-              : null,
-          contentPadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.r),
-            borderSide: BorderSide(width: 1.w, color: Colors.grey),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.r),
-            borderSide: BorderSide(width: 1.w, color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-
-class Button extends StatelessWidget {
-  final String text;
-
-  const Button ({
-    super.key,
-    required this.text,
-});
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
-      height: 55.w,
-      width: 317.w,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(4.r),
-        color: Color(0xffF83758),
-      ),
-      child: Text(
-        text,
-        style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-          fontSize: 23,
-        ),
-      ),
-    );
-  }
-}
-
-class Socials extends StatelessWidget {
-  final String imagePath;
-  const Socials ({
-    super.key,
-    required this.imagePath,
-});
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
-      height: 55.h,
-      width: 55.w,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.grey[200],
-        border: Border.all(color: Color(0xffF83758)),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Image.asset(
-          imagePath,
-          width: 14,
-          height: 14,
-        ),
-      ),
-    );
-  }
-}
 

@@ -2,6 +2,7 @@ import 'package:figma_to_flutter/BottomBarScreen.dart';
 import 'package:figma_to_flutter/Profile.dart';
 import 'package:figma_to_flutter/Shop%20page.dart';
 import 'package:figma_to_flutter/Trending%20Products.dart';
+import 'package:figma_to_flutter/checkout.dart';
 import 'package:figma_to_flutter/home_page.dart';
 import 'package:figma_to_flutter/signIn.dart';
 import 'package:figma_to_flutter/signUp.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: profile(),
+        home: checkout(),
       ),
     );
   }

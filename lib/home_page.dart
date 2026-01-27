@@ -1,8 +1,8 @@
 import 'package:figma_to_flutter/Trending%20Products.dart';
+import 'package:figma_to_flutter/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../widgets/product_card.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -1142,119 +1142,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-/// Search Bar
-class SearchBarWidget extends StatelessWidget {
-  final String hintText;
 
-  const SearchBarWidget ({
-    super.key, required this.hintText,
-});
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, 2),
-            blurRadius: 9,
-            spreadRadius: 0,
-            color: Colors.black.withOpacity(0.04), // #0000000A
-          ),
-        ],
-      ),
-      child: TextField(
-        decoration: InputDecoration(
-          hintText: hintText,
-          hintStyle: TextStyle(
-            color: Color(0xffBBBBBB),
-            fontFamily: 'Montserrat',
-          ),
-          prefixIcon: Icon(Icons.search),
-          suffixIcon: Icon(Icons.keyboard_voice_outlined),
-          filled: true,
-          fillColor: Colors.white,
-          contentPadding: EdgeInsets.symmetric(
-            vertical: 14,
-            horizontal: 16,
-          ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide.none,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-/// Sort and Filter Small Containers
-class SortFilterButton extends StatelessWidget {
-  final String text;
-  final IconData icon;
-
-  const SortFilterButton ({
-    super.key,
-    required this.text,
-    required this.icon,
-});
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(1, 1),
-            blurRadius: 16,
-            color: Colors.black.withOpacity(0.08),
-          ),
-        ],
-      ),
-      height: 40,
-      width: 70,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text( text,
-            style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold)),
-          Icon(icon),
-        ],
-      ),
-    );
-  }
-}
-
-/// Single category item (image + label)
-class CategoryItem extends StatelessWidget {
-  final String imagePath;
-  final String label;
-
-  const CategoryItem({
-    super.key,
-    required this.imagePath,
-    required this.label,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(
-          imagePath,
-          height: 60,
-          width: 60,
-          fit: BoxFit.cover,
-        ),
-        const SizedBox(height: 6),
-        Text(
-          label,
-          style: const TextStyle(fontFamily: 'Montserrat', fontSize: 14),
-        ),
-      ],
-    );
-  }
-}
 
