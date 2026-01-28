@@ -136,16 +136,16 @@ class SearchBarWidget extends StatelessWidget {
 
 class SortFilterButton extends StatelessWidget {
   final String text;
-  final IconData icon;
+  final IconData? icon;   // made nullable
 
-  const SortFilterButton ({
+  const SortFilterButton({
     super.key,
     required this.text,
-    required this.icon,
+    this.icon,            // optional now
   });
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -163,14 +163,25 @@ class SortFilterButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text( text,
-              style: TextStyle(fontFamily: 'Montserrat', fontWeight: FontWeight.bold)),
-          Icon(icon),
+          Text(
+            text,
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+
+          // only show icon if provided
+          if (icon != null) ...[
+            SizedBox(width: 4),
+            Icon(icon),
+          ],
         ],
       ),
     );
   }
 }
+
 
 
 class CategoryItem extends StatelessWidget {
