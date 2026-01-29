@@ -105,14 +105,14 @@ class _checkoutState extends State<checkout> {
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.12), // lighter
-                        blurRadius: 6,                         // smaller blur
-                        offset: Offset(0, 3),                  // smaller offset
+                        color: Colors.black.withOpacity(0.12),
+                        blurRadius: 6,
+                        offset: Offset(0, 3),
                       ),
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.08), // even lighter
-                        blurRadius: 4,                         // smaller blur
-                        offset: Offset(0, -2),                 // smaller offset
+                        color: Colors.black.withOpacity(0.08),
+                        blurRadius: 4,
+                        offset: Offset(0, -2),
                       ),
                     ],
                   ),
@@ -477,7 +477,6 @@ class _checkoutState extends State<checkout> {
                                   ),
 
                                   SizedBox(width: 10.w),
-
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
