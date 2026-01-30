@@ -12,7 +12,6 @@ class shop_Page extends StatefulWidget {
 }
 
 class _shop_PageState extends State<shop_Page> {
-  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
