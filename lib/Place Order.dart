@@ -223,7 +223,78 @@ class _placeOrderState extends State<placeOrder> {
                 ],
               ),
             ),
+            Padding(
+              padding: EdgeInsets.only(top: 43.h),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color(0xffF8F8F8),
+                  border: Border(
+                    top: BorderSide(
+                      color: Colors.black,
+                      width: 1.w,
+                    )
+                  ),
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 22.w, top: 38.h),
+                          child: Icon(Icons.currency_rupee),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 3.42.w, top: 38.h),
+                          child: RText(
+                            text: '7,000.00',
+                            textColor: Colors.black,
+                            textSize: 16.sp,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 18.w, top: 32.h,right: 22.w),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Color(0xffF83758),
+                              borderRadius: BorderRadius.circular(10)
+                            ),
+                            child: Padding(
+                              padding:  EdgeInsets.only(left: 15.w, top: 10.h, bottom: 10.h,right: 18.w),
+                              child: RText(text: 'Proceed to Payment', textColor: Colors.white, textSize: 17.sp),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 28.w, top: 6.h, bottom: 38.h),
+                      child: Row(
+                        children: [
+                          RText(
+                            text: 'View Details',
+                            textColor: Color(0xffF83758),
+                            textSize: 12.sp,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 11.h, left: 120.w, right: 120.w),
+                      child: Divider(
+                        thickness: 6,
+                        color: Color(0xffCACACA),
+                      ),
+                    ),
+                  ],
+                ),
 
+              ),
+            ),
           ],
         ),
       ),
