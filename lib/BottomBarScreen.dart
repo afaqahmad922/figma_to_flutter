@@ -1,4 +1,4 @@
-import 'package:figma_to_flutter/Shop%20page.dart';
+import 'package:figma_to_flutter/Shipping.dart';
 import 'package:figma_to_flutter/searchScreen.dart';
 import 'package:figma_to_flutter/settingScreen.dart';
 import 'package:flutter/material.dart';
@@ -16,22 +16,27 @@ class Bottombarscreen extends StatefulWidget {
 class _BottombarscreenState extends State<Bottombarscreen> {
   int currentIndexValue = 0;
 
-  List screenList = [
+  var screenList = [
     HomePage(),
     trending_Products(),
     settingScreen(),
     searchScreen(),
-    shop_Page(),
+    shipping(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        clipBehavior: Clip.none,
         children: [
-          screenList[currentIndexValue],
 
+          // Active Page
+          IndexedStack(
+            index: currentIndexValue,
+            children: screenList,
+          ),
+
+          // Bottom Nav Bar
           Positioned(
             bottom: 0,
             left: 0,
@@ -48,31 +53,41 @@ class _BottombarscreenState extends State<Bottombarscreen> {
               ),
               child: BottomNavigationBar(
                 type: BottomNavigationBarType.fixed,
-                backgroundColor: Color(0xffFFFFFF),
+                backgroundColor: Colors.white,
                 selectedItemColor: Color(0xffEB3030),
                 unselectedItemColor: Colors.black,
                 showUnselectedLabels: true,
+                currentIndex: currentIndexValue,
                 onTap: (index) {
                   setState(() {
                     if (index == 2) return;
                     currentIndexValue = index > 2 ? index - 1 : index;
                   });
                 },
-                currentIndex: currentIndexValue,
-                items: [
-                  BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-                  BottomNavigationBarItem(icon: Icon(Icons.favorite_outline), label: "Wishlist"),
-                  BottomNavigationBarItem(icon: SizedBox.shrink(), label: ""),
-                  BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-                  BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
+                items: const [
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.home), label: "Home"),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.favorite_outline),
+                      label: "Wishlist"),
+                  BottomNavigationBarItem(
+                      icon: SizedBox.shrink(), label: ""),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.search), label: "Search"),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.settings), label: "Settings"),
                 ],
               ),
             ),
           ),
 
+          // Floating Cart Button
           Positioned(
-            bottom: 10.h,
-            left: MediaQuery.of(context).size.width / 2 - 28.w,
+            bottom: 20.h,
+            left: MediaQuery
+                .of(context)
+                .size
+                .width / 2 - 28.w,
             child: GestureDetector(
               onTap: () {
                 setState(() {

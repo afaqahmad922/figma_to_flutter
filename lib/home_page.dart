@@ -448,7 +448,7 @@ class _HomePageState extends State<HomePage> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                    
+
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
@@ -743,7 +743,7 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 14,
                                   ),
                                 ),
-                    
+
                                 const SizedBox(height: 6),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -825,7 +825,7 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 14,
                                   ),
                                 ),
-                    
+
                                 const SizedBox(height: 6),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -907,7 +907,7 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 14,
                                   ),
                                 ),
-                    
+
                                 const SizedBox(height: 6),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,

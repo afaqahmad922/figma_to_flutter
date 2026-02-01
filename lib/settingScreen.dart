@@ -9,7 +9,7 @@ class settingScreen extends StatelessWidget {
       backgroundColor: Colors.teal.shade300,
       body: Column( mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(child: Text('SEARCH Screen')),
+          Center(child: Text('Setting Screen')),
         ],
       ),
     );
