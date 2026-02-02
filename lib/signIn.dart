@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter/BottomBarScreen.dart';
 import 'package:figma_to_flutter/Forgor%20Password.dart';
 import 'package:figma_to_flutter/signUp.dart';
 import 'package:figma_to_flutter/widgets/widgets.dart';
@@ -63,7 +64,11 @@ class _signInState extends State<signIn> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 32.w, right: 26.w, top: 52.h),
-                  child: Button(text: 'Login'),
+                  child: GestureDetector( onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Bottombarscreen()));
+                  },
+
+                      child: Button(text: 'Login')),
                 ),
                 Align(
                   alignment: Alignment.center,

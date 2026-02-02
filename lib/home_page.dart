@@ -1106,7 +1106,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       width: double.infinity,
                       child: Padding(
-                        padding: EdgeInsets.only(left: 16.w, top: 8.h),
+                        padding: EdgeInsets.only(left: 16.w, top: 8.h, bottom: 100.h),
                         child: Row(
                           children: [
                             Column(
@@ -1134,7 +1134,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            SizedBox(height: 30),
           ],
         ),
       ),

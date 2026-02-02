@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter/BottomBarScreen.dart';
 import 'package:figma_to_flutter/signIn.dart';
 import 'package:figma_to_flutter/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +58,11 @@ class _signInState extends State<signUp> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 38.h, left: 20.w, right: 29.w),
-                  child: Button(text: 'Create Account'),
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Bottombarscreen()));
+                    },
+                      child: Button(text: 'Create Account')),
                 ),
                 Align(
                   alignment: Alignment.center,
@@ -99,7 +104,7 @@ class _signInState extends State<signUp> {
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>signIn()));
+                            Navigator.pop(context);
                           },
                           child: Text(
                             'SIGN UP',

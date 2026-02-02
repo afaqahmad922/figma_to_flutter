@@ -71,7 +71,7 @@ class _trending_ProductsState extends State<trending_Products> {
 
           Expanded(
             child: Padding(
-              padding: EdgeInsets.only(left: 15.w),
+              padding: EdgeInsets.only(left: 15.w, bottom: 100.h),
               child: GridView.count(
                 crossAxisCount: 2,
                 crossAxisSpacing: 12,

@@ -26,15 +26,14 @@ class _BottombarscreenState extends State<Bottombarscreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return SafeArea( child:
+    Stack(
         children: [
 
-          // Active Page
-          IndexedStack(
-            index: currentIndexValue,
-            children: screenList,
-          ),
+      IndexedStack(
+      index: currentIndexValue,
+      children: screenList,
+    ),
 
           // Bottom Nav Bar
           Positioned(
