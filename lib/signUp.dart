@@ -116,7 +116,7 @@ class _signInState extends State<signUp> {
                           ),
                         ),
                       ],
-                    ),
+                    )
                   ),
                 ),
               ],
