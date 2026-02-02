@@ -102,25 +102,34 @@ class _signInState extends State<signIn> {
                   child: Padding(
                     padding: EdgeInsets.only(right: 89.w, left: 92, top:  28.h),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
                           'Create an Account',
                           style: TextStyle(color: Color(0xffF83758), fontSize: 14.sp),
                         ),
+                        SizedBox(width: 5.w,),
                         TextButton(
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero, //
+                            minimumSize: Size(0, 0),  //
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          ),
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>signUp()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => signUp()));
                           },
                           child: Text(
                             'SIGN UP',
                             style: TextStyle(
                               color: Color(0xffF83758),
-                              decoration: TextDecoration.underline, fontSize: 14.sp,
+                              decoration: TextDecoration.underline,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ),
+                        )
+
                       ],
                     ),
                   ),

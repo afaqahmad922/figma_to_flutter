@@ -102,7 +102,13 @@ class _signInState extends State<signUp> {
                           'Create an Account',
                           style: TextStyle(color: Color(0xffF83758), fontSize: 14.sp),
                         ),
+                        SizedBox(width: 5.w,),
                         TextButton(
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                            minimumSize: Size(0, 0),
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          ),
                           onPressed: () {
                             Navigator.pop(context);
                           },

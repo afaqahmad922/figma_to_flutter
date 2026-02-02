@@ -548,6 +548,7 @@ class _HomePageState extends State<HomePage> {
                 left: 16.w,
                 right: 16.w,
                 top: 16.h,
+                bottom: 10.h,
               ),
               child: Container(
                 decoration: BoxDecoration(
@@ -561,7 +562,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                height: 100,
                 width: double.infinity,
                 child: Row(
                   children: [
@@ -574,30 +574,32 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(width: 20),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            'Special Offers  😱',
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Text(
+                              'Special Offers  😱',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'We make sure you get the offer you need at best prices',
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 15,
                               fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.bold,
                               color: Colors.black,
                             ),
                           ),
-                        ),
-                        Text(
-                          'We make sure you get the \noffer you need at best prices',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontFamily: 'Montserrat',
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -659,30 +661,27 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Spacer(),
                       Container(
-                        height: 35,
-                        width: 100,
+                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4), // optional
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.white),
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: Row(
+                          mainAxisSize: MainAxisSize.min, // row only takes required width
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                'View All',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            Text(
+                              'View All',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14, // realistic font size
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(width: 4),
+                            SizedBox(width: 4), // small spacing
                             Icon(
                               Icons.arrow_forward_sharp,
                               color: Colors.white,
-                              size: 18,
+                              size: 16, // realistic icon size
                             ),
                           ],
                         ),
@@ -1016,31 +1015,28 @@ class _HomePageState extends State<HomePage> {
                             ),
                             Spacer(),
                             Container(
-                              height: 35,
-                              width: 100,
+                              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4), // optional
                               decoration: BoxDecoration(
-                                color: Color(0xffF83758),
+                                color: Colors.redAccent,
                                 border: Border.all(color: Colors.white),
                                 borderRadius: BorderRadius.circular(4),
                               ),
                               child: Row(
+                                mainAxisSize: MainAxisSize.min, // row only takes required width
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Text(
-                                      'View All',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                  Text(
+                                    'View All',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14, // realistic font size
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  SizedBox(width: 4),
+                                  SizedBox(width: 4), // small spacing
                                   Icon(
                                     Icons.arrow_forward_sharp,
                                     color: Colors.white,
-                                    size: 18,
+                                    size: 16, // realistic icon size
                                   ),
                                 ],
                               ),

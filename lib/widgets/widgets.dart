@@ -56,24 +56,21 @@ class ProductCard extends StatelessWidget {
                   title,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                 ),
-                const SizedBox(height: 4),
                 Text(
                   description,
                   style: TextStyle(fontSize: 12, color: Colors.grey),
                 ),
-                const SizedBox(height: 6),
                 Text(
                   price,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                 ),
-                const SizedBox(width: 6),
                 Row(
                   children: const [
-                    Icon(Icons.star, color: Colors.amber, size: 14),
-                    Icon(Icons.star, color: Colors.amber, size: 14),
-                    Icon(Icons.star, color: Colors.amber, size: 14),
-                    Icon(Icons.star, color: Colors.amber, size: 14),
-                    Icon(Icons.star_half, color: Colors.amber, size: 14),
+                    Icon(Icons.star, color: Colors.amber, size: 12),
+                    Icon(Icons.star, color: Colors.amber, size: 12),
+                    Icon(Icons.star, color: Colors.amber, size: 12),
+                    Icon(Icons.star, color: Colors.amber, size: 12),
+                    Icon(Icons.star_half, color: Colors.amber, size: 12),
                     SizedBox(width: 4),
                     Text('344,567', style: TextStyle(fontSize: 12)),
                   ],
@@ -181,7 +178,6 @@ class SortFilterButton extends StatelessWidget {
     );
   }
 }
-
 
 
 class CategoryItem extends StatelessWidget {
