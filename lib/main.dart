@@ -12,6 +12,7 @@ import 'package:figma_to_flutter/signIn.dart';
 import 'package:figma_to_flutter/signUp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'Forgor Password.dart';
 
 
 void main() {
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: signIn(),
+        home: trending_Products(),
       ),
     );
   }

@@ -93,6 +93,7 @@ flutter:
     - assets/paypal 1.png
     - assets/maestro 1.png
     - assets/Apple 1.png
+    - assets/capture.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -472,13 +472,7 @@ class _HomePageState extends State<HomePage> {
                                 const SizedBox(height: 6),
                                 Row(
                                   children: [
-                                    Text(
-                                      '₹2499',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
-                                      ),
-                                    ),
+                                    RText(text: '2499', textColor: Colors.black, textSize: 14.sp),
                                     const SizedBox(width: 6),
                                     Text(
                                       '₹4999',
@@ -489,13 +483,7 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                     const SizedBox(width: 6),
-                                    Text(
-                                      '50% Off',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.redAccent,
-                                      ),
-                                    ),
+                                    RText(text: '50% OFF', textColor: Colors.redAccent, textSize: 12.sp),
                                   ],
                                 ),
                                 const SizedBox(height: 6),
@@ -1137,5 +1125,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+
+
 
 

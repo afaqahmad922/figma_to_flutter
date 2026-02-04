@@ -112,11 +112,39 @@ class _shippingState extends State<shipping> {
             ),
             Padding(
               padding: EdgeInsets.only(left: 33.w, top: 25.h, bottom: 100.h),
-              child: Button(text: 'Continue'),
+              child: GestureDetector(
+                  onTap: () {
+                    showSuccessDialog(context);
+                  },
+                  child: Button(text: 'Continue')),
             )
           ],
         ),
       ),
     );
   }
+}
+
+void showSuccessDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    barrierDismissible: false,
+    barrierColor: Colors.black.withOpacity(0.6),
+    builder: (context) {
+      Future.delayed(const Duration(seconds: 2), () {
+        Navigator.of(context).pop();
+      });
+
+      return Dialog(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        child: Center(
+          child: Image.asset(
+            "assets/capture.png",
+            height: 250.h,
+          ),
+        ),
+      );
+    },
+  );
 }
