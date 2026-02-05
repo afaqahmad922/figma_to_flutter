@@ -17,25 +17,120 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+
+            // -------- TOP HEADER ----------
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.only(top: 50.h, bottom: 30.h),
+              decoration: BoxDecoration(
+                color: Colors.redAccent
+              ),
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.white,
+                    child: Icon(Icons.person, size: 40, color: Colors.black),
+                  ),
+                  SizedBox(height: 10.h),
+                  Text(
+                    "Guest User",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // -------- MENU ----------
+            Expanded(
+              child: ListView(
+                children: [
+
+                  ListTile(
+                    leading: Icon(Icons.home, color: Colors.redAccent),
+                    title: RText(text: 'Home', textColor: Colors.black, textSize: 14.sp),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+
+                  ListTile(
+                    leading: Icon(Icons.shop, color: Colors.redAccent),
+                    title: RText(text: 'Shop', textColor: Colors.black, textSize: 14.sp),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+
+                  ListTile(
+                    leading: Icon(Icons.favorite_outline, color: Colors.redAccent),
+                    title: RText(text: 'Wishlist', textColor: Colors.black, textSize: 14.sp),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+
+                  ListTile(
+                    leading: Icon(Icons.shopping_cart_outlined, color: Colors.redAccent),
+                    title: RText(text: 'My Cart', textColor: Colors.black, textSize: 14.sp),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+
+                  ListTile(
+                    leading: Icon(Icons.settings, color: Colors.redAccent),
+                    title: RText(text: 'Settings', textColor: Colors.black, textSize: 14.sp),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+
+                ],
+              ),
+            ),
+
+          ],
+        ),
+      ),
+
       backgroundColor: Color(0xffFDFDFD),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.only(
-                left: 16.w,
-                right: 16.w,
-                top: 52.h,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset('assets/homescreen/1.png'),
-                  Image.asset('assets/homescreen/2.png'),
-                  Image.asset('assets/homescreen/3.png'),
-                ],
-              ),
+            Builder(
+              builder: (context) {
+                return Padding(
+                  padding: EdgeInsets.only(
+                    left: 16.w,
+                    right: 16.w,
+                    top: 52.h,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Scaffold.of(context).openDrawer();
+                        },
+                        child: Image.asset('assets/homescreen/1.png'),
+                      ),
+
+                      Image.asset('assets/homescreen/2.png'),
+                      Image.asset('assets/homescreen/3.png'),
+                    ],
+                  ),
+                );
+              }
             ),
+
             Padding(
               padding: EdgeInsets.only(
                 left: 16.w,

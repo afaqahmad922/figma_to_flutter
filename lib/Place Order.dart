@@ -152,7 +152,7 @@ class _placeOrderState extends State<placeOrder> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 17, top: 36.h, right: 19.h),
+              padding: EdgeInsets.only(left: 17, top: 33.h, right: 19.h),
               child: Divider(
                 thickness: 1.2,
                 color: Color(0xffCACACA),
@@ -195,7 +195,7 @@ class _placeOrderState extends State<placeOrder> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 17, top: 41.h, right: 19.h),
+              padding: EdgeInsets.only(left: 17, top: 38.h, right: 19.h),
               child: Divider(
                 thickness: 1.2,
                 color: Color(0xffCACACA),

@@ -285,7 +285,7 @@ class _shop_PageState extends State<shop_Page> {
               ],
             ),
             Padding(
-              padding: EdgeInsets.only(left: 12.w, top: 12.h, right: 13.w),
+              padding: EdgeInsets.only(left: 12.w, top: 16.h, right: 13.w),
               child: Container(
                 decoration: BoxDecoration(
                     color: Color(0xffFFCCD5),
@@ -298,11 +298,11 @@ class _shop_PageState extends State<shop_Page> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: 26.w, top: 11.h,),
-                      child: Text("Delievery in", style: TextStyle(fontSize: 14.sp, fontFamily: 'Montserrat', fontWeight: FontWeight.bold),),
+                      child: RText(text: 'Delievery in', textColor: Colors.black, textSize: 14)
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 27.w, top: 6.h, bottom: 11.h),
-                      child: Text("1 within Hour", style: TextStyle(fontSize: 21.sp, fontFamily: 'Montserrat', fontWeight: FontWeight.bold),),
+                      child: RText(text: '1 within Hour', textColor: Colors.black, textSize: 21.sp)
                     ),
                   ],
                 ),
@@ -324,11 +324,12 @@ class _shop_PageState extends State<shop_Page> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(top: 16.h, left: 8.w, bottom: 16.h, right: 43.w),
-                          child: Text('View Similar', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp, fontFamily: 'Montserrat'),),
+                          child: RText(text: 'View Similar', textColor: Colors.black, textSize: 14.sp)
                         )
                       ],
                     ),
                   ),
+                  SizedBox(width: 3.w,),
                   Container(
                     padding: EdgeInsets.only(left: 3.w, right: 13.w),
                     decoration: BoxDecoration( border: Border.all(color: Color(0xffD9D9D9)),
@@ -342,7 +343,7 @@ class _shop_PageState extends State<shop_Page> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(top: 16.h, bottom: 16.h),
-                          child: Text('Add to Compare', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp, fontFamily: 'Montserrat'),),
+                          child: RText(text: 'Add to Compare', textColor: Colors.black, textSize: 14.sp)
                         )
                       ],
                     ),
@@ -352,13 +353,13 @@ class _shop_PageState extends State<shop_Page> {
             ),
             Padding(
               padding: EdgeInsets.only(left: 16.w, top: 20.h),
-              child: Text('Similar To', style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),),
+              child: RText(text: 'Similar To', textColor: Colors.black, textSize: 20.sp),
             ),
             Row(
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 16.w, top: 9.h),
-                  child: Text('282+ Iteams', style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),),
+                  child: RText(text: '282+ Iteams', textColor: Colors.black, textSize: 18)
                 ),
                 Spacer(),
                 SortFilterButton(text: 'Sort', icon: Icons.swap_vert),
