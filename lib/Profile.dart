@@ -1,5 +1,8 @@
 import 'package:figma_to_flutter/Shop%20page.dart';
 import 'package:figma_to_flutter/signIn.dart';
+import 'package:figma_to_flutter/widgets/Button.dart';
+import 'package:figma_to_flutter/widgets/Rtext.dart';
+import 'package:figma_to_flutter/widgets/SearchWidget.dart';
 import 'package:figma_to_flutter/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

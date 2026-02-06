@@ -1,4 +1,7 @@
 import 'package:figma_to_flutter/searchScreen.dart';
+import 'package:figma_to_flutter/widgets/ProductCard.dart';
+import 'package:figma_to_flutter/widgets/SearchBarWidget.dart';
+import 'package:figma_to_flutter/widgets/SortFilterButton.dart';
 import 'package:figma_to_flutter/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

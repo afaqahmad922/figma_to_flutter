@@ -1,4 +1,8 @@
 import 'package:figma_to_flutter/Trending%20Products.dart';
+import 'package:figma_to_flutter/widgets/CategoryItmems.dart';
+import 'package:figma_to_flutter/widgets/Rtext.dart';
+import 'package:figma_to_flutter/widgets/SearchBarWidget.dart';
+import 'package:figma_to_flutter/widgets/SortFilterButton.dart';
 import 'package:figma_to_flutter/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,3 +1,8 @@
+import 'package:figma_to_flutter/widgets/ProductCard.dart';
+import 'package:figma_to_flutter/widgets/Rtext.dart';
+import 'package:figma_to_flutter/widgets/SizeOptionChip.dart';
+import 'package:figma_to_flutter/widgets/SortFilterButton.dart';
+import 'package:figma_to_flutter/widgets/StackRectangleContainer.dart';
 import 'package:figma_to_flutter/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

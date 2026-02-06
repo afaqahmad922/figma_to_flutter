@@ -1,5 +1,8 @@
 import 'package:figma_to_flutter/BottomBarScreen.dart';
 import 'package:figma_to_flutter/signIn.dart';
+import 'package:figma_to_flutter/widgets/AppInputField.dart';
+import 'package:figma_to_flutter/widgets/Button.dart';
+import 'package:figma_to_flutter/widgets/Socials.dart';
 import 'package:figma_to_flutter/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
