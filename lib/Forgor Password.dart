@@ -1,4 +1,6 @@
+import 'package:figma_to_flutter/widgets/Rtext.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class forgotPassword extends StatefulWidget {
   const forgotPassword({super.key});
@@ -17,14 +19,8 @@ class _forgotPasswordState extends State<forgotPassword> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Forgot',
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-              ),
-              Text(
-                'Password?',
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-              ),
+              RText(text: 'Forgot', textColor: Colors.black, textSize: 40.sp),
+              RText(text: 'Password?', textColor: Colors.black, textSize: 40.sp),
               SizedBox(height: 40),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,8 +42,7 @@ class _forgotPasswordState extends State<forgotPassword> {
                     ),
                   ),
                   SizedBox(height: 10,),
-                  Text('* We will send you a message to set or reset your new password'),
-
+                  RText(text: '* We will send you a message to set or reset your new password', textColor: Colors.black, textSize: 12.sp),
                   SizedBox(height: 40),
                   Container(
                     height: 55,
@@ -57,14 +52,7 @@ class _forgotPasswordState extends State<forgotPassword> {
                       borderRadius: BorderRadius.circular(12),
                       color: Color(0xffF83758),
                     ),
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                      ),
-                    ),
+                    child: RText(text: 'Login', textColor: Colors.white, textSize: 23.sp)
                   ),
                 ],
               ),

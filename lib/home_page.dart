@@ -40,14 +40,7 @@ class _HomePageState extends State<HomePage> {
                     child: Icon(Icons.person, size: 40, color: Colors.black),
                   ),
                   SizedBox(height: 10.h),
-                  Text(
-                    "Guest User",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  RText(text: 'Guest User', textColor:Colors.white, textSize: 18.sp),
                 ],
               ),
             ),
@@ -151,14 +144,7 @@ class _HomePageState extends State<HomePage> {
               ),
               child: Row(
                 children: [
-                  Text(
-                    'All Products',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  ),
+                  RText(text: 'All Products', textColor: Colors.black, textSize: 18.sp),
                   Spacer(),
                   SortFilterButton(text: 'Sort', icon: Icons.swap_vert),
                   SizedBox(width: 10),
@@ -243,33 +229,11 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            '40-50% OFF',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            'Now in (Product)',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            'All Colors',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                          RText(text: '40-50% OFF', textColor: Colors.white, textSize: 25.sp),
+                          RText(text: 'Now in (Product)', textColor: Colors.white, textSize: 15.sp),
+                          RText(text: 'All Colors', textColor: Colors.white, textSize: 15.sp),
+
                           Container(
-                            height: 35,
-                            width: 115,
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.white),
                               borderRadius: BorderRadius.circular(4),
@@ -278,20 +242,15 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(5.0),
-                                  child: Text(
-                                    'Shop Now',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
+                                  child: RText(text: 'Shop Now', textColor: Colors.white, textSize: 15.sp),
                                 ),
-                                SizedBox(width: 4),
-                                Icon(
-                                  Icons.arrow_forward_sharp,
-                                  color: Colors.white,
-                                  size: 18,
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: Icon(
+                                    Icons.arrow_forward_sharp,
+                                    color: Colors.white,
+                                    size: 15,
+                                  ),
                                 ),
                               ],
                             ),
@@ -333,23 +292,8 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            'Deal of the Day',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Montserrat',
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            '22h 55m 20s remaining',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Montserrat',
-                              fontSize: 15,
-                            ),
-                          ),
+                          RText(text: 'Deal of the Day', textColor: Colors.white, textSize: 18.sp),
+                          RText(text: '22h 55m 20s remaining', textColor: Colors.white, textSize: 15.sp),
                         ],
                       ),
                       Spacer(),
@@ -364,14 +308,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                'View All',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+                              child: RText(text: 'View Al', textColor: Colors.white, textSize: 15.sp),
                             ),
                             SizedBox(width: 4),
                             Icon(
@@ -433,40 +370,14 @@ class _HomePageState extends State<HomePage> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Women Printed Kurta',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  'Neque porro quisquam est qui dolorem ipsum quia',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.grey,
-                                  ),
-                                ),
+                                RText(text: 'Women Printed Kurta', textColor: Colors.black, textSize: 14.sp),
+                                RText(text: 'Neque porro quisquam est qui dolorem ipsum quia', textColor: Colors.grey, textSize: 10.sp),
                                 const SizedBox(height: 6),
                                 Row(
                                   children: [
-                                    Text(
-                                      '₹1500',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
-                                      ),
-                                    ),
+                                    RText(text: '₹1500', textColor: Colors.black, textSize: 14),
                                     const SizedBox(width: 6),
-                                    Text(
-                                      '₹2499',
-                                      style: TextStyle(
-                                        decoration: TextDecoration.lineThrough,
-                                        fontSize: 12,
-                                        color: Colors.grey,
-                                      ),
-                                    ),
+                                    RText(text: '₹2499', textColor: Colors.grey, textSize: 12, isLineThrough: true,),
                                     const SizedBox(width: 6),
                                     Text(
                                       '40% Off',
